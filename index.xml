@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ping&#39;s Blog</title>
-    <link>http://hugo.spf13.com/</link>
+    <link>http://http:/hiddenpower1.github.io/</link>
     <description>Recent content on Ping&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://hugo.spf13.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://http:/hiddenpower1.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About Ping</title>
-      <link>http://hugo.spf13.com/about/</link>
+      <link>http://http/hiddenpower1.github.io/about/</link>
       <pubDate>Thu, 02 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://hugo.spf13.com/about/</guid>
+      <guid>http://http/hiddenpower1.github.io/about/</guid>
       <description>&lt;p&gt;Coding and Testing&lt;/p&gt;
 
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Creating a New Theme</title>
-      <link>http://hugo.spf13.com/blog/creating-a-new-theme/</link>
+      <link>http://http/hiddenpower1.github.io/blog/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hugo.spf13.com/blog/creating-a-new-theme/</guid>
+      <guid>http://http/hiddenpower1.github.io/blog/creating-a-new-theme/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:203afb8fdc074e80a6a8cddc7dc8ce70&#34;&gt;Introduction&lt;/h2&gt;
@@ -1170,10 +1170,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>Creating a New Theme</title>
-      <link>http://hugo.spf13.com/blog/creating-a-new-theme2/</link>
+      <link>http://http/hiddenpower1.github.io/blog/creating-a-new-theme2/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hugo.spf13.com/blog/creating-a-new-theme2/</guid>
+      <guid>http://http/hiddenpower1.github.io/blog/creating-a-new-theme2/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:bbb55d5e1627b6211f063b494dd91671&#34;&gt;Introduction&lt;/h2&gt;
