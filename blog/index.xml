@@ -178,5 +178,175 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://hiddenpower1.github.io/blog/Set%20up%20Terminal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://hiddenpower1.github.io/blog/Set%20up%20Terminal/</guid>
+      <description>
+
+&lt;h1 id=&#34;install-zsh:31314ae5542b2b81e4d07387b15197d8&#34;&gt;Install zsh&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Check if zsh is already installed on your Linux:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which zsh
+/bin/zsh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you get an output (like I got), it means zsh already exists on your OS. If not, feel free to install it.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Download and install zsh:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo yum install zsh
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;To simple use zsh, type zsh in your terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ zsh
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;install-tmux:31314ae5542b2b81e4d07387b15197d8&#34;&gt;Install tmux&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install tmux 
+brew install tmux
+
+if want to use tmux 2.1 on linux, check below gist
+https://gist.github.com/hiddenpower1/cd1d6610680a6d3d8ec96e0572c55813
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;install-powerline-powerline-fonts:31314ae5542b2b81e4d07387b15197d8&#34;&gt;Install powerline &amp;amp; powerline fonts&lt;/h1&gt;
+
+&lt;p&gt;安装前确定自己的电脑上已经有大于2.7版本的python&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;通过 pip 安装powerline&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install powerline-status
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;执行pip show powerline-status后你会看到这些&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Metadata-Version: 1.1
+Name: powerline-status
+Version: 2.3
+Summary: The ultimate statusline/prompt utility.
+Home-page: https://github.com/powerline/powerline
+Author: Kim Silkebaekken
+Author-email: kim.silkebaekken+vim@gmail.com
+License: MIT
+Location: /Library/Python/2.7/site-packages
+Requires: 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;记下上面的Location备用&lt;/p&gt;
+
+&lt;p&gt;2 .安装Powerline专用字体&lt;/p&gt;
+
+&lt;p&gt;执行完上面两步后，不出意外powerline就已经开始工作了。但是你会发现Bash提示符是一些非常恶心的符号。  出现这样情况的原因是powerline为了美观自己造了一些符号，而这些符号不在Unicode字库内. 所以想要powerline正常显示的话，需要安装特殊处理过的字体。好在有一位热心人的帮助，他把大部分的程序猿常用的等宽字体都打上了powerline patch使得我们的这部配置将异常简单。首先我们从github上下载并安装字体：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完成后我们就可以在iTerm2或者Terminal的字体选项里看到并选择多个xxx for powerline的字体了。*注意：对于ASCII fonts和non-ASCII fonts都需要选择for powerline的字体。&lt;/p&gt;
+
+&lt;h1 id=&#34;install-oh-my-zsh-plugins:31314ae5542b2b81e4d07387b15197d8&#34;&gt;Install oh-my-zsh &amp;amp; plugins&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install oh-my-zsh&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;via curl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When the installation is done, edit ~/.zshrc and set ZSH_THEME=&amp;ldquo;agnoster&amp;rdquo;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install zsh-autosuggestions&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Edit ~/.zshrc and replace line plugins=(git) with plugins=(git zsh-autosuggestions)&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create a file ~/.oh-my-zsh/custom/colors.zsh containing ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=&amp;lsquo;fg=240&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Install zsh-syntax-highlighting
+```
+git clone &lt;a href=&#34;https://github.com/zsh-users/zsh-syntax-highlighting.git&#34;&gt;https://github.com/zsh-users/zsh-syntax-highlighting.git&lt;/a&gt; ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or on mac:
+brew install zsh-syntax-highlighting&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~~Edit ~/.zshrc and replace line plugins=(git zsh-autosuggestions) with plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+Note: This works for me on Mac but not on redhat linux, got error(TODO)~~
+- After installation through homebrew, add
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+to the end of your .zshrc file. After that, it&#39;s best to restart your terminal. Sourcing your ~/.zshrc does not seem to work well with this plugin.
+
+4. Shorter prompt style
+
+By default, your prompt will now show “user@hostname” in the prompt. This will make your prompt rather bloated. Optionally set DEFAULT_USER in ~/.zshrc to your regular username (these must match) to hide the “user@hostname” info when you’re logged in as yourself on your local machine. You can check your username value by executing whoami in the terminal.
+
+# 配置Bash 使用powerline
+
+配置方法很简单，只需要在Bash配置文件(例如：/etc/bashrc，~/.bashrc)中增加一行代码以调用安装路径下的bindings/bash/powerline.sh 。这样每次生成新的Bash窗口时，都会自动执行powerline.sh文件中的内容。下面以~/.bashrc为例，使用文本编辑软件打开~/.bashrc，在最后添加下面一行代码：
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;. /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+*Note: for iTerm2 add this line to ~/.bash_profile, since iTerm2 doesn&#39;t read ~/.bashrc
+
+
+# 配置tmux 使用powerline
+
+默认的tmux风格比较朴素甚至有些丑陋。如果希望做一些美化和个性化配置的话，建议使用gpakosz的tmux配置。它的本质是一个tmux配置文件，实现了以下功能：
+
+基于powerline的美化
+显示笔记本电池电量
+和Mac互通的剪切板
+和vim更相近的快捷键
+安装方式也很简单如下 (注意：如果想使用powerline美化需要先安装powerline，具体方法见之前的博文)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$ cd
+$ rm -rf .tmux
+$ git clone &lt;a href=&#34;https://github.com/gpakosz/.tmux.git&#34;&gt;https://github.com/gpakosz/.tmux.git&lt;/a&gt;
+$ ln -s .tmux/.tmux.conf
+$ cp .tmux/.tmux.conf.local .&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#  配置 Vim
+I like to use below setting
+https://github.com/amix/vimrc
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;git clone &lt;a href=&#34;https://github.com/amix/vimrc.git&#34;&gt;https://github.com/amix/vimrc.git&lt;/a&gt; ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+```&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
